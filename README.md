@@ -11,8 +11,7 @@ The small section at the bottom is an optional section for a summary of the
 notes.  The image below shows a sketch of the of the Cornell Note Taking system.
 
 Cornell Notes: 
-![alt text](https://miro.medium.com/max/500/0*TU8qeIqHMoxc9JAT.jpg 
-"Cornell Notes")
+![](Cornell_Notes.jpg)
 
 
 ## Description
@@ -88,3 +87,8 @@ window. This cycle can repeat as many times as the user requires.
 a good bye message
 * The use of 'tty-prompt' allows for clean input from the terminal window.  
 note.rb makes use of the selector to achieve this.
+
+## Control Flow
+
+The control flow for notes.rb is as follows: 
+![](Control_Flow.jpg)
