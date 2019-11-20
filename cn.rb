@@ -12,16 +12,28 @@ class Page
         @datetime = Time.now
         @question = []
         @note = []
-        @summary = nil
     end
 
 end 
 
 def enter_note(subject)
 
-    
+    puts
+    new_page = Page.new
+    note = nil
+
+        git note = $prompt.ask('Enter note or [1] to exit to main menu:')
+        puts note
+        if note == "1"
+            $subject = {subject => new_page}
+        else
+            new_page.note.push(note)
+            new_page.question.push($prompt.ask('Enter a question related to the note:'))
+        end
     
 end
+
+
 
 def review_note
     
@@ -36,9 +48,8 @@ end
 
 
 font = TTY::Font.new(:standard)
-prompt = TTY::Prompt.new
+$prompt = TTY::Prompt.new
 
-$notes = Hash.new
 $subject  = Hash.new
 
 $subject = { "Math" => 1, "English" => 2, "History" => 3 }
@@ -48,13 +59,15 @@ puts
 
 $user_input = nil
 
-until $user_input == 3 do
+
     
+loop do
     
+ 
     begin
-    
-        choices = ["Enter Notes", "Review Notes" "Quiz", "Exit"]
-        $user_input = prompt.select("Please select from the menu:", choices)
+
+        choices = ["Enter Notes", "Review Notes", "Quiz", "Exit"]
+        $user_input = $prompt.select("Please select from the menu:", choices)
         
         case $user_input
         when "Enter Notes"
@@ -65,21 +78,18 @@ until $user_input == 3 do
             choices = []
             $subject.each_key{|subject| choices.push(subject)}
             choices.push ("New Subject")
-            $user_input = prompt.select("Please select from the menu:", choices)
+            $user_input = $prompt.select("Please select from the menu:", choices)
         
-            if $user_input =  "New Subject"
+            if $user_input == "New Subject"
             
-                subject = prompt.ask('What is your subject?')
+                subject = $prompt.ask('What is your subject?')
                 $subject = {subject => nil}
-                enter_note
+                enter_note (subject)
             
             else  
 
             end
 
-        
-
-    
         when "Quiz"
             
             puts "quiz"
@@ -100,9 +110,9 @@ until $user_input == 3 do
         puts "Goodbye"
     end 
     
-    
-
 end
+
+
 
 
 
