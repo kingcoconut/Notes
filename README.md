@@ -35,7 +35,8 @@ for quizzing functionality when reviewing the notes.
 
 ## Intended Use
 notes.rb is designed to not required the use of paper, therefore not requiring
-pages to be drawn up before hand, saving time and space.  It is primarily intended to be used in class room setting where writing, and laptop space is at 
+pages to be drawn up before hand, saving time and space.  It is primarily 
+intended to be used in class room setting where writing, and laptop space is at 
 a premium.  The intention is for the user to eliminate the need for paper based 
 notes.
 
@@ -49,5 +50,31 @@ function allows for the user to self-assess before an important event.
 Users may also find it useful to take notes of a non academic nature such as 
 important dates or events. notes.rb will allow the notes based on the question
 related to the important note (i.e. what is "such-n-such"'s birthday?) 
+
+## Functionality
+
+Functionality of notes.rb includes:
+
+* **Save notes:** notes.rb will save the notes and the relating questions to 
+a yaml file in the directory where notes.rb is located for future use 
+and review. Once a note is taken by the user, with a corresponding question,
+the note saved locally with the loaded data from previous note taking sessions. 
+Saved notes from previous sessions will be loaded on entry of notes.rb. On 
+exiting of notes.rb the data from previous and current sessions will be save to
+a yaml file  for future use.
+
+
+* **Review notes:** The user will be able to review all notes taken in current
+and previous sessions.  The user will firstly be asked which subject the notes 
+are related to. Once the subject is defined, the screen will output a list of
+all noted taken from previous and current session.  If the user required to 
+change subjects, and option will be available to return to the main menu where
+the user can re-enter the review notes section as required.  At this time there 
+isn't functionality to export to file.  This is due to the intention of notes.rb
+to be a purely electronic based system.
+
+* **Review notes:**  The user will be able to use the quiz function to test 
+their knowledge on notes taken in current and previous sessions.  With all 
+previous data being loaded into notes.rb
 
 
