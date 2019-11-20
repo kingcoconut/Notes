@@ -51,7 +51,7 @@ Users may also find it useful to take notes of a non academic nature such as
 important dates or events. notes.rb will allow the notes based on the question
 related to the important note (i.e. what is "such-n-such"'s birthday?) 
 
-## Functionality
+## Functionality and User Interaction
 
 Functionality of notes.rb includes:
 
@@ -75,6 +75,16 @@ to be a purely electronic based system.
 
 * **Review notes:**  The user will be able to use the quiz function to test 
 their knowledge on notes taken in current and previous sessions.  With all 
-previous data being loaded into notes.rb
+previous data being loaded into notes.rb, the user can now select from a list 
+of current or previous subjects.  A question related to previous notes taken in 
+the subject will be produced in the terminal window. The user can now think of 
+then answer.  Once the user has thought of the answer or is having trouble 
+answering, the user can hit enter and the note is produced in the terminal 
+window. This cycle can repeat as many times as the user requires.  
 
+## Error Handling
 
+* If the user wishes to exit through 'ctrl-c' notes.rb will exit gracefully with
+a good bye message
+* The use of 'tty-prompt' allows for clean input from the terminal window.  
+note.rb makes use of the selector to achieve this.
