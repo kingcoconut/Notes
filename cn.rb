@@ -4,6 +4,10 @@ require "tty-box"
 require "tty-font"
 require "colorize"
 
+$notes = hash.new
+$subject  = hash.new
+
+
 class Page
 
     attr_reader :datetime, :question, :note, :summary
@@ -21,11 +25,9 @@ def quiz
 
 end
 
-def
+def review_note
 
 end
-
-
 
 
 
@@ -50,6 +52,10 @@ until input == 3 do
     case $user_input
     when 1
         puts "Enter key word:"
+    
+    
+    
+    
     when 2
          
         puts "quizz"
