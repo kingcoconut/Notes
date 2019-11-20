@@ -41,9 +41,11 @@ Installation of notes.rb make use of bundler and install the following gems (The
 * "tty-table"
 * "tty-font"
 
-For installation, input the following command into the 
+For installation, change to the desired directory for installation and input the following command into the Linux CLI:
 
-
+~~~ 
+./notes.sh 
+~~~
 
 ---
 ## Intended Use
@@ -99,6 +101,7 @@ window. This cycle can repeat as many times as the user requires.
 a good bye message
 * The use of 'tty-prompt' allows for clean input from the terminal window.  
 note.rb makes use of the selector to achieve this.
+* 
 
 ---
 ## Control Flow
@@ -107,3 +110,10 @@ The control flow for notes.rb is as follows:
 
 ---
 ## Testing
+
+### Test 1: Note Taking
+1. 
+
+
+### Test 2: Quiz
+1. 
