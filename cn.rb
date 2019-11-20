@@ -6,7 +6,7 @@ require "colorize"
 
 class Page
 
-    attr_reader :datetime, :question, :note, :summary
+    attr_accessor :datetime, :question, :note, :summary
     
     def initialize 
         @datetime = Time.now
@@ -47,10 +47,37 @@ end
 
 def quiz
 
+    puts
+    choices = []
+    $subject.each_key{|subject| choices.push(subject)}
+    $user_input = $prompt.select("Please select from the menu:", choices)
+    subject = $subject[$user_input]
+    puts
+    
+    loop do
+
+        
+        question =  subject.question.sample
+        question_index = question.index(question)
+        answer = subject.note[question_index]
+        puts question
+        puts
+        puts "answer? [enter]"
+        gets
+        puts answer
+        puts
+        puts "exit quiz?"
+        puts
+        $user_input = $prompt.yes?('Answer another question?')
+        if $user_input == false
+            break
+        end
+        puts
+
+    end
+
+
 end
-
-
-
 
 
 font = TTY::Font.new(:standard)
@@ -64,17 +91,17 @@ english =  Page.new
 history = Page.new
 
 
-math.datetime =  Time.now
+math.datetime = Time.now
 math.question.push("what is 1+1?")
-math.note.push = ("2")
+math.note.push ("2")
 
-english.datetime =  Time.now
+english.datetime = Time.now
 english.question.push("spell 'hello?")
-english.note.push = ("h,e,l,l,o")
+english.note.push ("h,e,l,l,o")
 
-history.datetime =  Time.now
+history.datetime = Time.now
 history.question.push("ending year of WW2?")
-history.note.push = ("1945")
+history.note.push ("1945")
 
 
 $subject = { "Math" => math, 
@@ -85,9 +112,7 @@ puts font.write("Notes").green
 puts
 
 $user_input = nil
-
-
-    
+  
 loop do
     
  
@@ -119,7 +144,7 @@ loop do
 
         when "Quiz"
             
-           
+           quiz
         
         when "Review Notes"
         
@@ -135,14 +160,8 @@ loop do
         puts
         puts
         puts "Goodbye"
+        puts
+        puts
     end 
     
 end
-
-
-
-
-
-
-
-
