@@ -1,8 +1,4 @@
-require 'yaml'
-require "tty-prompt"
-require "tty-box"
-require "tty-font"
-require "colorize"
+require_relative cn_gems
 
 class Page
 
@@ -39,10 +35,20 @@ def enter_note(subject)
     
 end
 
-
-
 def review_note
+
+    puts
+    choices = []
+    $subject.each_key{|subject| choices.push(subject)}
+    $user_input = $prompt.select("Please select from the menu:", choices)
+    subject = $subject[$user_input]
+    puts
     
+    
+    table = TTY::Table.new ['Question', 'Note'], [[subject.question[0],subject.note[0]]]
+    renderer = TTY::Table::Renderer::Unicode.new(table)
+    puts renderer.render
+   
 end
 
 def quiz
@@ -56,7 +62,6 @@ def quiz
     
     loop do
 
-        
         question =  subject.question.sample
         question_index = question.index(question)
         answer = subject.note[question_index]
@@ -78,7 +83,6 @@ def quiz
 
 
 end
-
 
 font = TTY::Font.new(:standard)
 $prompt = TTY::Prompt.new
@@ -143,11 +147,9 @@ loop do
             end
 
         when "Quiz"
-            
            quiz
-        
         when "Review Notes"
-        
+            review_note
         when "Exit"
             break
         else 
