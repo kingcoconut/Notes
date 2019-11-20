@@ -58,7 +58,28 @@ $prompt = TTY::Prompt.new
 
 $subject  = Hash.new
 
-$subject = { "Math" => 1, "English" => 2, "History" => 3 }
+
+math = Page.new
+english =  Page.new
+history = Page.new
+
+
+math.datetime =  Time.now
+math.question.push("what is 1+1?")
+math.note.push = ("2")
+
+english.datetime =  Time.now
+english.question.push("spell 'hello?")
+english.note.push = ("h,e,l,l,o")
+
+history.datetime =  Time.now
+history.question.push("ending year of WW2?")
+history.note.push = ("1945")
+
+
+$subject = { "Math" => math, 
+             "English" => english, 
+             "History" => history }
 
 puts font.write("Notes").green
 puts
@@ -98,7 +119,7 @@ loop do
 
         when "Quiz"
             
-            puts "quiz"
+           
         
         when "Review Notes"
         
