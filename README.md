@@ -111,6 +111,11 @@ The control flow for notes.rb is as follows:
 ![](Control_Flow.jpg)
 
 ---
+
+## Project Management and Trello
+
+[Link to Trello for notes.rb](https://trello.com/b/Ex83gUWh "note.rb Trello")
+---
 ## Testing
 
 ### Test 1: Note Taking
