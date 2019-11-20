@@ -22,14 +22,20 @@ def enter_note(subject)
     new_page = Page.new
     note = nil
 
-        git note = $prompt.ask('Enter note or [1] to exit to main menu:')
-        puts note
+    loop do
+        
+        note = $prompt.ask('Enter note or [1] to exit to main menu:')
+        puts
         if note == "1"
             $subject = {subject => new_page}
+            break
         else
             new_page.note.push(note)
             new_page.question.push($prompt.ask('Enter a question related to the note:'))
+            puts
         end
+
+    end
     
 end
 
@@ -86,8 +92,8 @@ loop do
                 $subject = {subject => nil}
                 enter_note (subject)
             
-            else  
-
+            else 
+                enter_note ($user_input)
             end
 
         when "Quiz"
