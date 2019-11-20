@@ -11,6 +11,7 @@ The small section at the bottom is an optional section for a summary of the
 notes.  The image below shows a sketch of the of the Cornell Note Taking system.
 
 Cornell Notes: 
+
 ![](Cornell_Notes.jpg)
 
 ---
@@ -106,6 +107,7 @@ note.rb makes use of the selector to achieve this.
 ---
 ## Control Flow
 The control flow for notes.rb is as follows: 
+
 ![](Control_Flow.jpg)
 
 ---
