@@ -4,10 +4,6 @@ require "tty-box"
 require "tty-font"
 require "colorize"
 
-$notes = Hash.new
-$subject  = Hash.new
-
-
 class Page
 
     attr_reader :datetime, :question, :note, :summary
@@ -21,18 +17,31 @@ class Page
 
 end 
 
+def enter_note(subject)
+
+    
+    
+end
+
+def review_note
+    
+end
+
 def quiz
 
 end
 
-def review_note
 
-end
 
 
 
 font = TTY::Font.new(:standard)
 prompt = TTY::Prompt.new
+
+$notes = Hash.new
+$subject  = Hash.new
+
+$subject = { "Math" => 1, "English" => 2, "History" => 3 }
 
 puts font.write("Notes").green
 puts
@@ -41,27 +50,57 @@ $user_input = nil
 
 until $user_input == 3 do
     
-    choices = [
-        {name: 'Enter notes', value: 1},
-        {name: 'Quizz', value: 2},
-        {name: 'Exit', value: 3}
-      ]
     
-    $user_input = prompt.select("Please select from the menu:", choices)
+    begin
     
+        choices = ["Enter Notes", "Review Notes" "Quiz", "Exit"]
+        $user_input = prompt.select("Please select from the menu:", choices)
+        
+        case $user_input
+        when "Enter Notes"
+            
+            puts
+            puts("Select as subject or add a new subject:")
+            puts
+            choices = []
+            $subject.each_key{|subject| choices.push(subject)}
+            choices.push ("New Subject")
+            $user_input = prompt.select("Please select from the menu:", choices)
+        
+            if $user_input =  "New Subject"
+            
+                subject = prompt.ask('What is your subject?')
+                $subject = {subject => nil}
+                enter_note
+            
+            else  
+
+            end
+
+        
+
     
-    case $user_input
-    when 1
-        puts "Enter key word:"
- 
-    when 2
-         
-        puts "quizz"
-    when 3
+        when "Quiz"
+            
+            puts "quiz"
+        
+        when "Review Notes"
+        
+        when "Exit"
+            break
+        else 
+            puts "please enter valid selection"
+        end
+
+    rescue TTY::Reader::InputInterrupt
         break
-    else 
-        puts "please enter valid selection"
-    end
+    ensure
+        puts
+        puts
+        puts "Goodbye"
+    end 
+    
+    
 
 end
 
