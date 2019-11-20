@@ -4,8 +4,8 @@ require "tty-box"
 require "tty-font"
 require "colorize"
 
-$notes = hash.new
-$subject  = hash.new
+$notes = Hash.new
+$subject  = Hash.new
 
 
 class Page
@@ -32,13 +32,14 @@ end
 
 
 font = TTY::Font.new(:standard)
+prompt = TTY::Prompt.new
 
 puts font.write("Notes").green
 puts
 
 $user_input = nil
 
-until input == 3 do
+until $user_input == 3 do
     
     choices = [
         {name: 'Enter notes', value: 1},
@@ -52,10 +53,7 @@ until input == 3 do
     case $user_input
     when 1
         puts "Enter key word:"
-    
-    
-    
-    
+ 
     when 2
          
         puts "quizz"
