@@ -81,5 +81,9 @@
 ---
 ## Wednesday, 20th Nov 2019 - Building application:
 
-*  Decision on export not to be added due to the intention to keep the application electronic only.
+* Decision on export not to be added due to the intention to keep the application electronic only.
+* Decision to not include summary in notes.rb
 * Control flow created
+* Completed building 'Page' class
+* Completed initial menu with 'tty-prompt' gem
+* Completed note taking method
