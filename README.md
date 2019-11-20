@@ -13,9 +13,8 @@ notes.  The image below shows a sketch of the of the Cornell Note Taking system.
 Cornell Notes: 
 ![](Cornell_Notes.jpg)
 
-
+---
 ## Description
-
 To make the Cornell Note Taking system more efficient, the notes.rb terminal
 application has been create.  The aim is to allow the user to input data 
 directly into a CLI terminal to be stored for future study and review.
@@ -32,6 +31,21 @@ study notes.
 3. The questions are specifically related to the corresponding note. This allows 
 for quizzing functionality when reviewing the notes.
 
+---
+## Installation (Linux CLI only)
+
+Installation of notes.rb make use of bundler and install the following gems (The "yaml" gem is natively install with ruby):
+
+* "colorize"
+* "tty-prompt"
+* "tty-table"
+* "tty-font"
+
+For installation, input the following command into the 
+
+
+
+---
 ## Intended Use
 notes.rb is designed to not required the use of paper, therefore not requiring
 pages to be drawn up before hand, saving time and space.  It is primarily 
@@ -39,9 +53,8 @@ intended to be used in class room setting where writing, and laptop space is at
 a premium.  The intention is for the user to eliminate the need for paper based 
 notes.
 
-
+---
 ## Target Audience
-
 notes.rb is primarily focused on the students or academics who are required to
 quickly take notes and require a quick method of review later.    The quiz 
 function allows for the user to self-assess before an important event.
@@ -50,8 +63,8 @@ Users may also find it useful to take notes of a non academic nature such as
 important dates or events. notes.rb will allow the notes based on the question
 related to the important note (i.e. what is "such-n-such"'s birthday?) 
 
+---
 ## Functionality and User Interaction
-
 Functionality of notes.rb includes:
 
 * **Save notes:** notes.rb will save the notes and the relating questions to 
@@ -80,15 +93,17 @@ the subject will be produced in the terminal window. The user can now think of
 then answer.  Once the user has thought of the answer or is having trouble 
 answering, the user can hit enter and the note is produced in the terminal 
 window. This cycle can repeat as many times as the user requires.  
-
+---
 ## Error Handling
-
 * If the user wishes to exit through 'ctrl-c' notes.rb will exit gracefully with
 a good bye message
 * The use of 'tty-prompt' allows for clean input from the terminal window.  
 note.rb makes use of the selector to achieve this.
 
+---
 ## Control Flow
-
 The control flow for notes.rb is as follows: 
 ![](Control_Flow.jpg)
+
+---
+## Testing

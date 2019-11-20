@@ -82,8 +82,14 @@
 ## Wednesday, 20th Nov 2019 - Building application:
 
 * Decision on export not to be added due to the intention to keep the application electronic only.
-* Decision to not include summary in notes.rb
+* Decision to not include summary in notes.rb due to usage not being essential at this stage.
+* Trello created
 * Control flow created
 * Completed building 'Page' class
 * Completed initial menu with 'tty-prompt' gem
 * Completed note taking method
+* Completion of quiz method
+* Partial completion note review method with 'tty table'.  Issues with the output to table and borders
+
+---
+## Thursday, 21st Nov 2019 - Completing application:
