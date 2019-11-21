@@ -39,7 +39,7 @@ Installation of notes.rb make use of bundler and install the following gems (The
 
 * "colorize"
 * "tty-prompt"
-* "tty-table"
+* "terminal-table"
 * "tty-font"
 
 For installation, change to the desired directory for installation and input the following command into the Linux CLI:
@@ -84,9 +84,7 @@ and previous sessions.  The user will firstly be asked which subject the notes
 are related to. Once the subject is defined, the screen will output a list of
 all noted taken from previous and current session.  If the user required to 
 change subjects, and option will be available to return to the main menu where
-the user can re-enter the review notes section as required.  At this time there 
-isn't functionality to export to file.  This is due to the intention of notes.rb
-to be a purely electronic based system.
+the user can re-enter the review notes section as required.  
 
 * **Review notes:**  The user will be able to use the quiz function to test 
 their knowledge on notes taken in current and previous sessions.  With all 
@@ -121,11 +119,36 @@ The control flow for notes.rb is as follows:
 ## Testing
 
 ### Test 1: Note Taking
-1. 
+Test functionality of Note taking
+
+1. run notes.rb
+2. move to 'Enter Notes' in the menu
+3. move to 'Math' in the menu
+4. Enter "12" into the terminal
+5. Enter "6+6?" into the terminal
+6. Enter 1 to exit 
+7. Case 1: Move to "Review Notes" in the menu
+8. Case 1: Move to "Math" in the menu
+9. Case 1 Outcome: Date & Time, "6+6?", and "12" should appear in the output table
+10. Case 2: press "y" and enter
+11. Case 2: open text file 'notes.txt' in the same directory
+12. Case 2 Outcome: Terminal output from case 1 should appear in text file
+
+Result: Test operates as described.
 
 
 ### Test 2: Quiz
-1. 
+Test the quiz function:
+
+1. run notes.rb
+2. move to 'Quiz' in the menu
+3. move to 'History' in the menu
+4. Case 1: "End of WW1?
+5. Case 1 Outcome: Return "1918"
+6. Case 2: "End of WW2?"
+7. Case 2 Outcome: Return "1918"
+
+Result:  Not receiving the required outcome. Issue to be resolved on line 135 of methods.rb. Unknown cause.
 
 ---
 
@@ -212,7 +235,6 @@ The control flow for notes.rb is as follows:
 ---
 ## Wednesday, 20th Nov 2019 - Building application:
 
-* Decision on export not to be added due to the intention to keep the application electronic only.
 * Decision to not include summary in notes.rb due to usage not being essential at this stage.
 * Trello created
 * Control flow created
@@ -220,7 +242,14 @@ The control flow for notes.rb is as follows:
 * Completed initial menu with 'tty-prompt' gem
 * Completed note taking method
 * Completion of quiz method
-* Partial completion note review method with 'tty table'.  Issues with the output to table and borders
+* Partial completion note review method with 'tty-table'.  Issues with the output to table and borders
 
 ---
 ## Thursday, 21st Nov 2019 - Completing application:
+
+* changed 'tty-table' gem to "terminal-table" due to ease of use
+* added export functionality to yaml
+* added the ability to export the review notes terminal output to text file
+* fixes to menu
+* creation of tests
+* modularised methods and classes
