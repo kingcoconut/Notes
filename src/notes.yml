@@ -1,25 +1,38 @@
 ---
 Math: !ruby/object:Page
   datetime:
-  - 2019-11-21 11:52:09.988372500 +10:00
-  - 2019-11-21 11:52:09.988375200 +10:00
+  - 2019-11-21 16:09:53.000000000 +10:00
+  - 2019-11-21 16:09:53.000000000 +10:00
   question:
-  - what is 1+1?
-  - what is 2+2?
+  - what is 3 + 3?
+  - what is 1 + 1?
   note:
+  - '6'
   - '2'
-  - '4'
 English: !ruby/object:Page
   datetime:
-  - 2019-11-21 11:52:09.988376600 +10:00
+  - 2019-11-21 16:09:53.000000000 +10:00
+  - 2019-11-21 16:09:53.000000000 +10:00
   question:
-  - spell 'hello?'
+  - Spell Hello?
+  - Spell World?
   note:
-  - h,e,l,l,o
+  - H,e,l,l,o
+  - W,o,r,l,d
 History: !ruby/object:Page
   datetime:
-  - 2019-11-21 11:52:09.988377900 +10:00
+  - 2019-11-21 16:09:53.000000000 +10:00
+  - 2019-11-21 16:09:53.000000000 +10:00
   question:
-  - ending year of WW2?
+  - End of WW1?
+  - End of WW2?
   note:
+  - '1918'
   - '1945'
+chem: !ruby/object:Page
+  datetime:
+  - 2019-11-21 16:57:35.905464700 +10:00
+  question:
+  - what is something
+  note:
+  - something
