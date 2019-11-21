@@ -1,0 +1,25 @@
+---
+Math: !ruby/object:Page
+  datetime:
+  - 2019-11-21 11:52:09.988372500 +10:00
+  - 2019-11-21 11:52:09.988375200 +10:00
+  question:
+  - what is 1+1?
+  - what is 2+2?
+  note:
+  - '2'
+  - '4'
+English: !ruby/object:Page
+  datetime:
+  - 2019-11-21 11:52:09.988376600 +10:00
+  question:
+  - spell 'hello?'
+  note:
+  - h,e,l,l,o
+History: !ruby/object:Page
+  datetime:
+  - 2019-11-21 11:52:09.988377900 +10:00
+  question:
+  - ending year of WW2?
+  note:
+  - '1945'

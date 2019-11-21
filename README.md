@@ -45,7 +45,7 @@ Installation of notes.rb make use of bundler and install the following gems (The
 For installation, change to the desired directory for installation and input the following command into the Linux CLI:
 
 ~~~ 
-./notes.sh 
+./run.sh 
 ~~~
 
 ---

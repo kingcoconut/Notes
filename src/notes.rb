@@ -1,11 +1,13 @@
 require_relative "notes_gems"
 
+
+
 class Page
 
     attr_accessor :datetime, :question, :note, :summary
     
     def initialize 
-        @datetime = Time.now
+        @datetime = []
         @question = []
         @note = []
     end
@@ -35,20 +37,45 @@ def enter_note(subject)
     
 end
 
+def delete_note 
+
+end
+
+def input_notes
+    $subject = YAML.load(File.read("notes.yml"))
+end
+
+def output_note
+    File.open("notes.yml", "w") { |file| file.write($subject.to_yaml) }
+end
+
 def review_note
 
     puts
+
     choices = []
     $subject.each_key{|subject| choices.push(subject)}
     $user_input = $prompt.select("Please select from the menu:", choices)
     subject = $subject[$user_input]
+
+    datetime = subject.datetime 
+    question = subject.question
+    note = subject.note
+
+    puts
+    table = Terminal::Table.new :title => $user_input,
+                                :headings => ['Date', 'Question', 'Note'],
+                                :alignment => :left 
+                           
+    for index in 0...datetime.length
+        datetime_out = datetime[index].strftime("Created on %m/%d/%Y at %I:%M%p")
+        table.add_row [datetime_out, question[index], note[index]]
+        table.style = {:all_separators => true, :padding_left => 3,:alignment => :center}
+    end
+ 
+    puts table
     puts
     
-    
-    table = TTY::Table.new ['Question', 'Note'], [[subject.question[0],subject.note[0]]]
-    renderer = TTY::Table::Renderer::Unicode.new(table)
-    puts renderer.render
-   
 end
 
 def quiz
@@ -84,36 +111,17 @@ def quiz
 
 end
 
-font = TTY::Font.new(:standard)
-$prompt = TTY::Prompt.new
 
 $subject  = Hash.new
+$font = TTY::Font.new(:standard)
+$prompt = TTY::Prompt.new
 
+input_notes
 
-math = Page.new
-english =  Page.new
-history = Page.new
-
-
-math.datetime = Time.now
-math.question.push("what is 1+1?")
-math.note.push ("2")
-
-english.datetime = Time.now
-english.question.push("spell 'hello?")
-english.note.push ("h,e,l,l,o")
-
-history.datetime = Time.now
-history.question.push("ending year of WW2?")
-history.note.push ("1945")
-
-
-$subject = { "Math" => math, 
-             "English" => english, 
-             "History" => history }
-
-puts font.write("Notes").green
+puts $font.write("Notes").green
 puts
+
+
 
 $user_input = nil
   
@@ -158,12 +166,16 @@ loop do
 
     rescue TTY::Reader::InputInterrupt
         break
-    ensure
         puts
         puts
         puts "Goodbye"
         puts
         puts
+
+    ensure
+        output_note
     end 
     
 end
+
+
