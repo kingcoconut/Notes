@@ -1,4 +1,4 @@
-require_relative cn_gems
+require_relative "notes_gems"
 
 class Page
 

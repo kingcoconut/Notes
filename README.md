@@ -12,12 +12,12 @@ notes.  The image below shows a sketch of the of the Cornell Note Taking system.
 
 Cornell Notes: 
 
-![](Cornell_Notes.jpg)
+![](/docs/Cornell_Notes.jpg)
 
 ---
 ## Description
 To make the Cornell Note Taking system more efficient, the notes.rb terminal
-application has been create.  The aim is to allow the user to input data 
+application has been created.  The aim is to allow the user to input data 
 directly into a CLI terminal to be stored for future study and review.
 
 Some modifications are required from the original Cornell Notes:
@@ -108,7 +108,7 @@ note.rb makes use of the selector to achieve this.
 ## Control Flow
 The control flow for notes.rb is as follows: 
 
-![](Control_Flow.jpg)
+![](/docs/Control_Flow.jpg)
 
 ---
 
@@ -124,3 +124,101 @@ The control flow for notes.rb is as follows:
 
 ### Test 2: Quiz
 1. 
+
+---
+
+# Status Updates
+
+## Monday, 18th Nov 2019 - Reviewing a list of requirements:
+
+* .md file
+    - describe at a high level what the application will do
+    - identify the problem it will solve and explain why you are developing it
+    - identify the target audience
+    - explain how a member of the target audience will use it
+
+* Features list
+    - at least 3 features - describe
+    - loops, variables and error handling
+
+* Outline
+    - user interaction and experience
+    - interaction with each feature
+    - how errors will be handled
+
+* Control flow
+    - workflow/logical flow of the application
+    - integration of features
+    - us UML
+
+* Implementation plan
+    - how each feature will be implemented
+    - check list of each task for each features
+    - prioritisation of different features or checklist items
+      within a feature
+    - provide a deadline, duration or other time indicator
+
+* Status update
+    - provide 2 status updates
+    - significant changes to features or implementation
+    - issues or roadblocks
+
+* Ruby
+    - variables
+    - variable scope
+    - loops
+    - conditionals
+    - control structures
+    - functions for - error handling
+                    - input output
+                    - command line arguments
+
+* Gems
+    - at least 4 gems
+    - function for importing gems
+
+* Philosophy 
+    - DRY
+    - style and conventions
+
+* Instructions - help file
+    - installation steps
+    - dependencies
+    - system/hardware requirements
+    - explanation of each feature
+
+* Test
+    - 2 test sets
+    - expected results
+
+* Github
+    - 20 commits
+    - message summaries
+    - push to repository
+
+* Project management
+    - Trello 
+    - screen shots
+
+* Bash scripts
+    - turn application into an executable
+    - or package the application for use as a module or dependency
+
+* Presentation
+    - walk through 5 min
+
+---
+## Wednesday, 20th Nov 2019 - Building application:
+
+* Decision on export not to be added due to the intention to keep the application electronic only.
+* Decision to not include summary in notes.rb due to usage not being essential at this stage.
+* Trello created
+* Control flow created
+* Completed building 'Page' class
+* Completed initial menu with 'tty-prompt' gem
+* Completed note taking method
+* Completion of quiz method
+* Partial completion note review method with 'tty table'.  Issues with the output to table and borders
+
+---
+## Thursday, 21st Nov 2019 - Completing application:
