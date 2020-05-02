@@ -37,11 +37,7 @@ loop do
 
     rescue TTY::Reader::InputInterrupt
         break
-        puts
-        puts
-        puts "Goodbye"
-        puts
-        puts
+        puts "/n/nGoodbye/n/n"
 
     ensure
         puts
